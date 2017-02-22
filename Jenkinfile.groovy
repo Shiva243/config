@@ -12,6 +12,8 @@ node{
         stage 'deploy'
             sh 'cf login -a https://api.run.pivotal.io -u svelagandula@nisum.com -p Neethu@243'
             sh 'cf push FIMTEST'
+            sh 'cf bind-service FIMTEST userinfo'
+            sh 'cf restart FIMTEST'
             echo 'Deployed successfully'
     }
     
