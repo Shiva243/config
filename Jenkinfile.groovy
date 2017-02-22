@@ -6,8 +6,9 @@ node{
         git url:'https://github.com/Shiva243/config.git'
         echo 'Successfully checkout'
     stage 'Build project'
-        sh 'gradle clean build'
-        echo 'build successfully'
+        dir('FIM')
+            sh 'gradle clean build'
+            echo 'build successfully'
     
             
 }
