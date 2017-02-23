@@ -16,9 +16,14 @@ node{
         
            
             echo 'Deployed successfully'
+        notifyBuild()
     }
     }catch(Exception e){
         echo 'Failed'
     }
        echo "result '${currentBuild.result}'"     
+}
+def notifyBuild(){
+     echo 'mail trigger'
+    mail bcc: '', body: "Build '${currentBuild.result}'", cc: '', from: '', replyTo: '', subject: "Build $ ", to: 'shivav809@gmail.com'
 }
