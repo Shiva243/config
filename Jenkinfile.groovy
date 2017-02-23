@@ -6,7 +6,7 @@ node{
         git url:'https://github.com/Shiva243/FIM.git'
         echo 'Successfully checkout'
     stage 'Build project'
-    //dir('FIM'){
+   // dir('FIM'){
         sh 'gradle clean build'
         echo 'build successfully'
         stage 'deploy'
@@ -23,8 +23,6 @@ node{
     }
 }
 def notifyBuild(String buildStatus){
-    def writer = new StringWriter()  // html is written here by markup builder
-def markup = new groovy.xml.MarkupBuilder(writer) 
     echo "build status '${buildStatus}'"
     mail  subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
         bcc: '', body: "${buildStatus} \n Job Details '${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
