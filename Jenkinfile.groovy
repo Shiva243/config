@@ -31,4 +31,3 @@ def markup = new groovy.xml.MarkupBuilder(writer)
         cc: '', from: '', replyTo: '',
         to: 'shivav809@gmail.com'
 }
-
