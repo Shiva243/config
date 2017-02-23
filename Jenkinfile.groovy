@@ -14,19 +14,26 @@ node{
             sh 'cf push FIMTEST'
             echo 'Deployed successfully'
         stage 'Mail'
-            notifyBuild('Build Successfully')
+            notifyBuild('Build Success')
         
     //}
     }catch(Exception e){
         echo 'Failed'
-        notifyBuild('Build Failed, Please check and fix ASAP')
+        notifyBuild('Build Failed, Please check and fix ASAP.')
     }
           
 }
 def notifyBuild(String buildStatus){
     echo "build status '${buildStatus}'"
     mail  subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
-        bcc: '', body: "${buildStatus} \n Job Details ' ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
+        bcc: '', body: "${buildStatus} \n Job Details <table>
+    <tr>
+        <th>Job Name</th>
+        <th>Build Number</th>
+        <th>Build Url</th>
+    </tr>
+    </table>
+    ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
         cc: '', from: '', replyTo: '',
         to: 'shivav809@gmail.com'
 }
