@@ -27,11 +27,23 @@ def notifyBuild(String buildStatus){
     def writer = new StringWriter()  // html is written here by markup builder
 def markup = new groovy.xml.MarkupBuilder(writer) 
     echo "build status '${buildStatus}'"
-    mail  subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
+    mail  subject: "${buildStatus}: Job"+mailtable()+"'${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
         bcc: '', body: "${buildStatus} \n Job Details
     ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
         cc: '', from: '', replyTo: '',
         to: 'shivav809@gmail.com'
 }
 def mailtable(){
+    def writer = new StringWriter()  // html is written here by markup builder
+def markup = new groovy.xml.MarkupBuilder(writer)  // the builder
+ 
+markup.html{
+    table {
+        tr {
+            td(class:"row", "hello world!")  
+        }
+    }
+}
+ 
+println writer.toString();
 }
