@@ -9,16 +9,16 @@ node{
     dir('FIM'){
         sh 'gradle clean build'
         echo 'build successfully'
-       currentBuild.result = 'build successfully'
+       
         stage 'deploy'
             sh 'cf login -a https://api.run.pivotal.io -u svelagandula@nisum.com -p Neethu@243'
             sh 'cf push FIMTEST'
-         currentBuild.result = 'Deployed successfully'
-            echo "result '${currentBuild.result}'"
+        
+           
             echo 'Deployed successfully'
     }
     }catch(Exception e){
         echo 'Failed'
     }
-           
+       echo "result '${currentBuild.result}'"     
 }
