@@ -1,5 +1,5 @@
 node{
-    
+    try{ 
     stage 'Test'
         echo 'test'
     stage 'check out'
@@ -13,6 +13,9 @@ node{
             sh 'cf login -a https://api.run.pivotal.io -u svelagandula@nisum.com -p Neethu@243'
             sh 'cf push FIMTEST'
             echo 'Deployed successfully'
+    }
+    }catch(Exception e){
+        echo 'Failed'
     }
            
 }
