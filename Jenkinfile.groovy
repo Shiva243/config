@@ -19,7 +19,8 @@ node{
     //}
     }catch(Exception e){
         echo 'Failed'
-        notifyBuild('Build Failed, Please check and fix ASAP.')
+        stage 'Mail'
+            notifyBuild('Build Failed, Please check and fix ASAP.')
     }
 }
 def notifyBuild(String buildStatus){
