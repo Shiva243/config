@@ -26,6 +26,7 @@ node{
 def notifyBuild(String buildStatus){
     echo "build status '${buildStatus}'"
     mail  subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
-        bcc: '', body: "Build '${subject} (${env.BUILD_URL})'", cc: '', from: '', replyTo: '',
+        bcc: '', body: "${buildStatus}: Job ' ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
+        cc: '', from: '', replyTo: '',
         to: 'shivav809@gmail.com'
 }
