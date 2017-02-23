@@ -29,15 +29,9 @@ def markup = new groovy.xml.MarkupBuilder(writer)
     echo "build status '${buildStatus}'"
     mail  subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
         bcc: '', body: "${buildStatus} \n Job Details
-    markup.html{
-    table {
-        tr {
-            th(class:"row", "Job Name")  
-        }
-    }
-}
-    println writer.toString()
     ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
         cc: '', from: '', replyTo: '',
         to: 'shivav809@gmail.com'
+}
+def mailtable(){
 }
