@@ -29,7 +29,7 @@ def markup = new groovy.xml.MarkupBuilder(writer)
     echo "build status '${buildStatus}'"
     mail  subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
         bcc: '', body: "${buildStatus} \n Job Details
-    ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
+    '${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
         cc: '', from: '', replyTo: '',
         to: 'shivav809@gmail.com'
 }
