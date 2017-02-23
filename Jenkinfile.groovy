@@ -12,6 +12,7 @@ node{
         stage 'deploy'
             sh 'cf login -a https://api.run.pivotal.io -u svelagandula@nisum.com -p Neethu@243'
             sh 'cf push FIMTEST'
+            echo '${currentBuild.result}'
             echo 'Deployed successfully'
     }
     }catch(Exception e){
