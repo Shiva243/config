@@ -25,5 +25,6 @@ node{
 }
 def notifyBuild(){
      echo 'mail trigger'
-    mail bcc: '', body: "Build '${currentBuild.result}'", cc: '', from: '', replyTo: '', subject: "Build $ ", to: 'shivav809@gmail.com'
+    mail bcc: '', body: "Build '${currentBuild.result}'", cc: '', from: '', replyTo: '', subject: "Build ", 
+        to: 'shivav809@gmail.com'
 }
