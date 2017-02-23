@@ -36,7 +36,7 @@ def markup = new groovy.xml.MarkupBuilder(writer)
         }
     }
 }
-    
+    println writer.toString()
     ${env.JOB_NAME} [${env.BUILD_NUMBER}] (${env.BUILD_URL})'", 
         cc: '', from: '', replyTo: '',
         to: 'shivav809@gmail.com'
