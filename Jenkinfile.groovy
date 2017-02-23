@@ -21,7 +21,7 @@ node{
         echo 'Failed'
         notifyBuild('Build Failed, Please check and fix ASAP.')
     }
-      mailtable()    
+     // mailtable()    
 }
 def notifyBuild(String buildStatus){
     def writer = new StringWriter()  // html is written here by markup builder
