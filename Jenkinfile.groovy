@@ -24,6 +24,8 @@ node{
           
 }
 def notifyBuild(String buildStatus){
+    def writer = new StringWriter()  // html is written here by markup builder
+def markup = new groovy.xml.MarkupBuilder(writer) 
     echo "build status '${buildStatus}'"
     mail  subject: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' ", 
         bcc: '', body: "${buildStatus} \n Job Details
