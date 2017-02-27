@@ -1,6 +1,8 @@
 pipeline{
   agent any
-
+ environment { 
+        CC = 'clang'
+    }
     stages {
         stage('Build') {
             steps {
