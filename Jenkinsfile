@@ -12,10 +12,7 @@ pipeline{
       }
         stage('Build') {
             steps {
-              gradle  {
-                tasks('clean',' build')
-                echo 'Building..'
-              }
+              build 'gradle clean build'  
             }
         }
         stage('Test') {
