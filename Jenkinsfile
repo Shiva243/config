@@ -12,7 +12,8 @@ pipeline{
       }
         stage('Build') {
             steps {
-              gradle  {'gradle clean build'}
+              gradle  {
+                tasks('clean',' build')
                 echo 'Building..'
             }
         }
