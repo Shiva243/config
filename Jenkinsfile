@@ -15,6 +15,7 @@ pipeline{
               gradle  {
                 tasks('clean',' build')
                 echo 'Building..'
+              }
             }
         }
         stage('Test') {
