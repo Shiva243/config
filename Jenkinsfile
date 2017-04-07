@@ -5,12 +5,14 @@ pipeline{
     }
     stages {
       stage('checkout'){
+        steps{
         checkout scm: [$class: 'GitSCM', branches: [[name: '*/master']], 
                        userRemoteConfigs: [[url: 'https://github.com/Shiva243/FIM.git']]]
+        }
       }
         stage('Build') {
             steps {
-              gradle : ['gradle clean build']
+              gradle  {'gradle clean build'}
                 echo 'Building..'
             }
         }
