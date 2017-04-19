@@ -1,4 +1,4 @@
-def REMOTE_URL = 'https://github.gapinc.com/OrderManage/alert-search'
+def REMOTE_URL = 'https://github.com/Shiva243/aler-search'
 job("alert_search_master") {
     displayName('Alert Search Master')
     wrappers {
