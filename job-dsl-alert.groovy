@@ -1,6 +1,6 @@
-def REMOTE_URL = 'https://github.com/Shiva243/aler-search'
-job("alert_search_master") {
-    displayName('Alert Search Master')
+def REMOTE_URL = 'https://github.com/Shiva243/search'
+job("search") {
+    displayName('Search')
     wrappers {
         credentialsBinding {
             usernamePassword('ARTIFACTORY_USERNAME', 'ARTIFACTORY_PASSWORD', 'artifactory_credential')
