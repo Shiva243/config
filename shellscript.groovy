@@ -8,15 +8,12 @@ node{
          def w = env.WORKSPACE
    echo "workspace directory is ${w}"
     stage 'Build project'
-   dir({WORKSPACE}){
-      echo {WORKSPACE}
       def sout = new StringBuffer(), serr = new StringBuffer()
-      
-      def proc = '/script.sh'.execute()
+    def proc = '${w}/script.sh'.execute()
       proc.consumeProcessOutput(sout, serr)
       proc.waitForOrKill(1000)
       println sout
-   }
+   
 }
 
 
