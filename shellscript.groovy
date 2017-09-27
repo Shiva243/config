@@ -7,6 +7,7 @@ node{
         echo 'Successfully checkout'
     stage 'Build project'
    dir(${WORKSPACE}){
+      echo '${WORKSPACE}'
       def sout = new StringBuffer(), serr = new StringBuffer()
       
       def proc = '/script.sh'.execute()
