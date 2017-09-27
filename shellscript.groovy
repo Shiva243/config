@@ -11,9 +11,10 @@ node{
     stage 'Build project'
       def sout = new StringBuffer(), serr = new StringBuffer()
     def proc = f.canExecute()
-      proc.inputStream.eachLine {println it}
-  proc.waitFor();
-   
+      proc.consumeProcessOutput( sout, serr )
+proc.waitFor()
+    if( sout.size() > 0 ) println sout
+   if( serr.size() > 0 ) println serr
 }
 
 
