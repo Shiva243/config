@@ -7,9 +7,10 @@ node{
         echo 'Successfully checkout'
          def w = env.WORKSPACE
    echo "workspace directory is ${w}/script.sh"
+    File f = new File("${w}/script.sh");
     stage 'Build project'
       def sout = new StringBuffer(), serr = new StringBuffer()
-    def proc = '${w}/script.sh'.execute()
+    def proc = f.execute()
       proc.consumeProcessOutput(sout, serr)
       proc.waitForOrKill(1000)
       println sout
