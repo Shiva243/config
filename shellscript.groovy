@@ -1,6 +1,6 @@
 def sout = new StringBuffer(), serr = new StringBuffer()
 
-def proc ='./script.sh'.execute()
+def proc =${workspace}+'script.sh'.execute()
 
 proc.consumeProcessOutput(sout, serr)
 proc.waitForOrKill(1000)
