@@ -10,7 +10,7 @@ node{
     File f = new File("${w}/script.sh");
     stage 'Build project'
       def sout = new StringBuffer(), serr = new StringBuffer()
-    def proc = f.execute()
+    def proc = f.canExecute()
       proc.consumeProcessOutput(sout, serr)
       proc.waitForOrKill(1000)
       println sout
