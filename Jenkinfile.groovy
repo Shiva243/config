@@ -10,7 +10,7 @@ node{
         sh 'gradle clean build'
         echo 'build successfully'
         stage 'deploy'
-            sh 'cf login -a https://api.run.pivotal.io -u svelagandula@nisum.com -p Neethu@243'
+            sh 'cf login -a https://api.run.pivotal.io -u skoti786@gmail.com -p Neethu@8095'
             sh 'cf push FIMTEST'
             echo 'Deployed successfully'
         stage 'Mail'
